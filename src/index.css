@@ -43,6 +43,10 @@ body {
   display: flex;
   justify-content: space-evenly;
   gap: 1.5rem;
+
+  margin-bottom: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 #user-input label {
