@@ -1,9 +1,7 @@
 import { useState } from "react";
 
 import UserInput from "./components/UserInput";
-import Table from "./components/Table";
-
-import { calculateInvestmentResults } from './util/investment'
+import Results from "./components/Results";
 
 const INITIAL_INPUT_VALUES = {
   initialInvestment: 10000,
@@ -11,7 +9,6 @@ const INITIAL_INPUT_VALUES = {
   expectedReturn: 6,
   duration: 10
 };
-
 
 function App() {
   const [userInput, setUserInput] = useState({...INITIAL_INPUT_VALUES});
@@ -25,12 +22,10 @@ function App() {
     });
   }
 
-  let resultTable = calculateInvestmentResults(userInput);
-
   return (
     <>
       <UserInput userInput={userInput} onChangeInput={handleChangeInput} />
-      <Table result={resultTable} />
+      <Results input={userInput} />
     </>
   );
 }
