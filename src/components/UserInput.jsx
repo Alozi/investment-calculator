@@ -1,6 +1,6 @@
-export default function UserInput({ inputValues, onChangeInput }) {
+export default function UserInput({ userInput, onChangeInput }) {
   return (
-    <div id="user-input">
+    <section id="user-input">
       <div className="input-group">
         <div>
           <label htmlFor="initialInvestment">Initial investment</label>
@@ -8,9 +8,10 @@ export default function UserInput({ inputValues, onChangeInput }) {
             id="initialInvestment"
             type="number"
             min="0"
-            value={inputValues.initialInvestment}
+            value={userInput.initialInvestment}
             onChange={onChangeInput}
-          ></input>
+            required
+          />
         </div>
         <div>
           <label htmlFor="annualInvestment">Annual investment</label>
@@ -18,9 +19,10 @@ export default function UserInput({ inputValues, onChangeInput }) {
             id="annualInvestment"
             type="number"
             min="0"
-            value={inputValues.annualInvestment}
+            value={userInput.annualInvestment}
             onChange={onChangeInput}
-          ></input>
+            required
+          />
         </div>
       </div>
       <div className="input-group">
@@ -30,9 +32,10 @@ export default function UserInput({ inputValues, onChangeInput }) {
             id="expectedReturn"
             type="number"
             min="0"
-            value={inputValues.expectedReturn}
+            value={userInput.expectedReturn}
             onChange={onChangeInput}
-          ></input>
+            required
+          />
         </div>
         <div>
           <label htmlFor="duration">Duration</label>
@@ -40,12 +43,12 @@ export default function UserInput({ inputValues, onChangeInput }) {
             id="duration"
             type="number"
             min="0"
-            max="12"
-            value={inputValues.duration}
+            value={userInput.duration}
             onChange={onChangeInput}
-          ></input>
+            required
+          />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

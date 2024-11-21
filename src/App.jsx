@@ -14,10 +14,10 @@ const INITIAL_INPUT_VALUES = {
 
 
 function App() {
-  const [inputValues, setInputValues] = useState({...INITIAL_INPUT_VALUES});
+  const [userInput, setUserInput] = useState({...INITIAL_INPUT_VALUES});
 
   function handleChangeInput(event) {
-    setInputValues((prevInputValues) => {
+    setUserInput((prevInputValues) => {
       return {
         ...prevInputValues,
         [event.target.id]: Number(event.target.value),
@@ -25,11 +25,11 @@ function App() {
     });
   }
 
-  let resultTable = calculateInvestmentResults(inputValues);
+  let resultTable = calculateInvestmentResults(userInput);
 
   return (
     <>
-      <UserInput inputValues={inputValues} onChangeInput={handleChangeInput} />
+      <UserInput userInput={userInput} onChangeInput={handleChangeInput} />
       <Table result={resultTable} />
     </>
   );
